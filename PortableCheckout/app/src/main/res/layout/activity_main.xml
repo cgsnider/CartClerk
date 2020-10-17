@@ -35,6 +35,16 @@
         app:layout_constraintVertical_bias="1.0"
         app:navGraph="@navigation/mobile_navigation" />
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_help"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        tools:layout_editor_absoluteX="360dp"
+        tools:layout_editor_absoluteY="16dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

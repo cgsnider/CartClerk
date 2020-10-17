@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">PortableCheckout</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_dashboard">Scan</string>
+    <string name="title_notifications">Cart</string>
     <string name="scannerButton">Scan </string>
     <string name="request_cart">Get Cart</string>
 </resources>
