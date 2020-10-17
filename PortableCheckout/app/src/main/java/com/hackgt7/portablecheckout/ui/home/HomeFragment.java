@@ -3,6 +3,7 @@ package com.hackgt7.portablecheckout.ui.home;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,13 +43,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         });
 
         this.scanButton = (Button) root.findViewById(R.id.scanBtn);
+        if (scanButton == null) {
+            Log.d("HOME", "scan btn is null");
+        }
         scanButton.setOnClickListener(this::onClick);
         return root;
 
     }
 
+    /**
+     * Called when a view has been clicked.
+     *
+     * @param v The view that was clicked.
+     */
     @Override
-    public void onClick(View view) {
+    public void onClick(View v) {
         barScan();
     }
 
