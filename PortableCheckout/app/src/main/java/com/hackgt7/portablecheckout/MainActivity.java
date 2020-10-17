@@ -21,6 +21,8 @@ import androidx.navigation.ui.NavigationUI;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button scanButton;
+    //Default value of scanOut is -1, if val is -1 then no successful scan has been done
+    int scanOut = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,13 +62,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (result != null) {
             if (result.getContents() != null) {
+                this.scanOut = resultCode;
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(result.getContents());
                 builder.setTitle("Scanning Result");
                 builder.setPositiveButton("Scan Again",
                         (DialogInterface dialog, int which) -> barScan())
                         .setNegativeButton("finish",
-                                (DialogInterface dialog, int which) -> barScan());
+                                (DialogInterface dialog, int which) -> {});
                 AlertDialog dialog = builder.create();
                 dialog.show();
             } else {
