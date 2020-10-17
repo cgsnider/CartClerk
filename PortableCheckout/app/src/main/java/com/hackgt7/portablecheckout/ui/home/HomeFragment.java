@@ -23,7 +23,7 @@ import com.google.zxing.integration.android.IntentResult;
 import com.hackgt7.portablecheckout.CaptureAct;
 import com.hackgt7.portablecheckout.R;
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
+public class HomeFragment extends Fragment {
     Button scanButton;
     int scannerOut = -1;
 
@@ -46,50 +46,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         if (scanButton == null) {
             Log.d("HOME", "scan btn is null");
         }
-        scanButton.setOnClickListener(this::onClick);
         return root;
 
-    }
-
-    /**
-     * Called when a view has been clicked.
-     *
-     * @param v The view that was clicked.
-     */
-    @Override
-    public void onClick(View v) {
-        barScan();
-    }
-
-    private void barScan() {
-        IntentIntegrator integrator = new IntentIntegrator(getActivity());
-        integrator.setCaptureActivity(CaptureAct.class);
-        integrator.setOrientationLocked(false);
-        integrator.setDesiredBarcodeFormats(IntentIntegrator.PRODUCT_CODE_TYPES);
-        integrator.setPrompt("Scanning Bar Code");
-        integrator.initiateScan();
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if (result != null) {
-            if (result.getContents() != null) {
-                this.scannerOut = resultCode;
-                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setMessage(result.getContents());
-                builder.setTitle("Scanning Result");
-                builder.setPositiveButton("Scan Again",
-                        (DialogInterface dialog, int which) -> barScan())
-                        .setNegativeButton("finish",
-                                (DialogInterface dialog, int which) -> {});
-                AlertDialog dialog = builder.create();
-                dialog.show();
-            } else {
-                Toast.makeText(getContext(), "no results", Toast.LENGTH_SHORT);
-            }
-        } else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
     }
 }
