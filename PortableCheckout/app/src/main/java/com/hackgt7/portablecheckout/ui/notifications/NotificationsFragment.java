@@ -114,7 +114,10 @@ public class NotificationsFragment extends Fragment {
         quanAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1);
         quanView.setAdapter(quanAdapter);
         setUpListViewListener(quanView);
-
+        if (items == null) {
+            items = new ArrayList<>();
+            items.add(new CartItem("empty cart", 0, 0));
+        }
         for(int i = 0; i < items.size(); i++) {
             this.addItem(this.getView(), "" + items.get(i).quantity, quanAdapter);
         }
