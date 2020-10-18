@@ -148,17 +148,19 @@ public class NotificationsFragment extends Fragment {
                 Context context = getContext();
                 Toast.makeText(context, "Item Removed", Toast.LENGTH_LONG).show();
 
-                nameAdapter.remove(nameList.get(i));
-                priceAdapter.remove(priceList.get(i));
-                quanAdapter.remove(quanList.get(i));
+                if (nameList.size() != 0) {
+                    nameAdapter.remove(nameList.get(i));
+                    priceAdapter.remove(priceList.get(i));
+                    quanAdapter.remove(quanList.get(i));
 
-                nameList.remove(i);
-                priceList.remove(i);
-                quanList.remove(i);
+                    nameList.remove(i);
+                    priceList.remove(i);
+                    quanList.remove(i);
 
-                nameAdapter.notifyDataSetChanged();
-                priceAdapter.notifyDataSetChanged();
-                quanAdapter.notifyDataSetChanged();
+                    nameAdapter.notifyDataSetChanged();
+                    priceAdapter.notifyDataSetChanged();
+                    quanAdapter.notifyDataSetChanged();
+                }
 
                 return true;
             }
