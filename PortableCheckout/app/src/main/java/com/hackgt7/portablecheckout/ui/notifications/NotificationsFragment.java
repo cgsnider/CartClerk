@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.hackgt7.portablecheckout.R;
+import com.hackgt7.portablecheckout.ui.dashboard.DashboardFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -119,6 +120,9 @@ public class NotificationsFragment extends Fragment {
         if (items == null) {
             items = new ArrayList<>();
             items.add(new CartItem("empty cart", 0, 0));
+        }
+        for (Integer ea : DashboardFragment.scans) {
+            items.add(new CartItem("" + ea, 0, 0));
         }
 
         for(int i = 0; i < items.size(); i++) {

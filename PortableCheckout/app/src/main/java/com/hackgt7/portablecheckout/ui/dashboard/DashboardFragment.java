@@ -20,9 +20,13 @@ import com.google.zxing.integration.android.IntentResult;
 import com.hackgt7.portablecheckout.CaptureAct;
 import com.hackgt7.portablecheckout.R;
 
+import java.util.ArrayList;
+
 public class DashboardFragment extends Fragment implements View.OnClickListener {
     Button scanButton;
-    int scannerOut = -1;
+//    int scannerOut = -1;
+
+    public static ArrayList<Integer> scans = new ArrayList<>();
 
     private DashboardViewModel dashboardViewModel;
 
@@ -71,7 +75,8 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (result != null) {
             if (result.getContents() != null) {
-                this.scannerOut = resultCode;
+                scans.add(resultCode);
+                Log.d("SCAN", "" + requestCode);
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setMessage(result.getContents());
                 builder.setTitle("Scanning Result");
