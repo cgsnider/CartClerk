@@ -39,6 +39,14 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
     private Date date;
     private ArrayList<CartItem> items;
 
+    public double getTotal() {
+        double total = 0.0;
+        for (CartItem ea: items) {
+            total += ea.price * ea.quantity;
+        }
+        return total;
+    }
+
     private class CartItem {
         String name;
         double quantity;
@@ -110,10 +118,10 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
                 .url("https://gateway-staging.ncrcloud.com/emerald/selling-service/v1/carts/rdfvFVWJq0euHPrwO9PThQ/items")
                 .method("GET", null)
                 .addHeader("Content-Type", "application/json")
-                .addHeader("Authorization", "AccessKey 48ea19ed04ad4ae7811f57f307faed31:Dl4rdJg+8B01grsR6vV2ZBVswoFp6Gpwq1tLMZaIb3Q7PeAexhfT4zyJslq4V/Dv1X3MrMuz5oxAs1X69Yqs3Q==")
+                .addHeader("Authorization", "AccessKey 48ea19ed04ad4ae7811f57f307faed31:w+GnYk2URSDRm7ebT0G8Z824giJFDUslfhQMfE4zOkX8ulEy0mukMDbfjy4Y5VK78CoFBYChRFWnDq4it03maQ==")
                 .addHeader("nep-organization", "553888f84fdb4ce481dfea21e3202930")
                 .addHeader("nep-enterprise-unit", "fe2c3bf9a4194797a234159c1cd34797")
-                .addHeader("Date", "Sun, 18 Oct 2020 00:59:13 GMT")
+                .addHeader("Date", "Sun, 18 Oct 2020 01:12:02 GMT")
                 .build();
         Log.d("MAIN", getServerTime());
         Log.d("MAIN", "Sat, 17 Oct 2020 23:09:53 GMT");
