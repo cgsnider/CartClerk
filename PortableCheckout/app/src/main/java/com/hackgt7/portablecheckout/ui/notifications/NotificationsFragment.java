@@ -119,7 +119,7 @@ public class NotificationsFragment extends Fragment {
 
         if (items == null) {
             items = new ArrayList<>();
-            items.add(new CartItem("empty cart", 0, 0));
+            items.add(new CartItem("spicy brown mustard", 2, 3.49));
         }
         for (Integer ea : DashboardFragment.scans) {
             items.add(new CartItem("" + ea, 0, 0));

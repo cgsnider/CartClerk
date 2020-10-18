@@ -76,7 +76,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
         if (result != null) {
             if (result.getContents() != null) {
                 scans.add(resultCode);
-                Log.d("SCAN", "" + requestCode);
+                Log.d("SCAN", "" + result);
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setMessage(result.getContents());
                 builder.setTitle("Scanning Result");
