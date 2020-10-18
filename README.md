@@ -1,5 +1,6 @@
-# HackGT_7: 
+# HackGT_7
 ## CartClerk
+### Description
 A self-checkout in your pocket! For avoiding lines and close contact at traditional checkouts while you're shopping.
 
 ### Resources and open-source projects used:
