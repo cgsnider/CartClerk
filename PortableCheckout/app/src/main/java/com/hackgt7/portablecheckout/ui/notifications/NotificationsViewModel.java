@@ -1,10 +1,11 @@
 package com.hackgt7.portablecheckout.ui.notifications;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class NotificationsViewModel extends AppCompatActivity {
 
     private MutableLiveData<String> mText;
 
