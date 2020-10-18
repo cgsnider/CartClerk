@@ -194,10 +194,10 @@ public class NotificationsFragment extends Fragment {
                 .url("https://gateway-staging.ncrcloud.com/emerald/selling-service/v1/carts/rdfvFVWJq0euHPrwO9PThQ/items")
                 .method("GET", null)
                 .addHeader("Content-Type", "application/json")
-                .addHeader("Authorization", "AccessKey 48ea19ed04ad4ae7811f57f307faed31:6hkgiY8mJKNUk8ZziHArIX6jYrEdvjsSqOM55ME/PQ8IahsmP3gNwV/onLWbDQvP/w6FiCDzzFgvkkp3JdAc2A==")
+                .addHeader("Authorization", "AccessKey 48ea19ed04ad4ae7811f57f307faed31:wMP50ArByxt0F9JCGoJQlTwnkftkmZpGlM5j9MG0SqMWcZ6jyRlUmALQk0GLVqIRxCdVr60U0vf+SDdLZHmCxA==")
                 .addHeader("nep-organization", "553888f84fdb4ce481dfea21e3202930")
                 .addHeader("nep-enterprise-unit", "fe2c3bf9a4194797a234159c1cd34797")
-                .addHeader("Date", "Sun, 18 Oct 2020 01:56:30 GMT")
+                .addHeader("Date", "Sun, 18 Oct 2020 03:19:26 GMT")
                 .build();
         Log.d("MAIN", getServerTime());
         Log.d("MAIN", "Sat, 17 Oct 2020 23:09:53 GMT");
